@@ -13,7 +13,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
     <div className="bg-white h-screen">
       <TopNav />
       <Container className="pt-8 md:mt-8 md:p-0">{children}</Container>
-      <BottomNav />
+      {/* <BottomNav /> */}
     </div>
   );
 };
