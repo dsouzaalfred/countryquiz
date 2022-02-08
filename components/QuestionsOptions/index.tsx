@@ -7,22 +7,40 @@ interface OptionsProps {
 }
 interface QuestionsOptionsProps {
   questions: OptionsProps[];
-  isAnswerCorrect?: boolean;
-  selectedAnswer?: string;
+  isAnswerCorrect: boolean;
+  selectedAnswer: string;
+  onSelect: (value: string) => void;
+  questionType:
+    | "flagToCountry"
+    | "capitalToCountry"
+    | "currencyToCountry"
+    | "languageToCountry"
+    | "countryToFlag"
+    | "countryToCapital"
+    | "countryToCurrency"
+    | "countryToLanguage";
 }
 
-export const QuestionsOptions = ({ questions }: QuestionsOptionsProps) => {
+export const QuestionsOptions = ({
+  questions,
+  onSelect,
+  selectedAnswer,
+  isAnswerCorrect,
+  questionType,
+}: QuestionsOptionsProps) => {
   return (
-    <div className="flex flex-col w-full p-8">
+    <>
       {questions.map((question, index) => (
-        <div key={index}>
-          <Options
-            label={question.label}
-            value={question.value}
-            className="flex mb-2"
-          />
-        </div>
+        <Options
+          label={question.label}
+          value={question.value}
+          onSelect={onSelect}
+          selectedAnswer={selectedAnswer}
+          key={index}
+          isAnswerCorrect={isAnswerCorrect}
+          questionType={questionType}
+        />
       ))}
-    </div>
+    </>
   );
 };
