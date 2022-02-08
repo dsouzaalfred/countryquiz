@@ -5,29 +5,9 @@ import { PageLayout } from "@/layouts/Page";
 import { QuestionCard } from "@/components/QuestionCard";
 import { PageTitle } from "@/components/PageTitle";
 
+import { getRandomIndex, constructOptions, shuffleArray } from "@/utils/index";
+
 import data from "@/data/countries.json";
-
-interface Options {
-  label: string;
-  value: string;
-}
-
-const getRandomIndex = (length: number) => Math.floor(Math.random() * length);
-
-const constructOptions = (options: number[]): Options[] => {
-  const arr = options.map((option) => {
-    const country = data[option];
-    return { label: country.name, value: country.code };
-  });
-  return arr;
-};
-
-const shuffleArray = (array: Options[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-};
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const randomCountry = getRandomIndex(data.length);
@@ -39,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     getRandomIndex(data.length),
   ];
 
-  const options = constructOptions(possibleAnswers);
+  const options = constructOptions(possibleAnswers, data);
 
   shuffleArray(options);
 
