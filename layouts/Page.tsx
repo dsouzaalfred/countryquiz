@@ -10,7 +10,7 @@ interface PageLayoutProps {
 
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-white h-screen">
       <TopNav />
       <Container className="pt-8 md:mt-8 md:p-0">{children}</Container>
       <BottomNav />
