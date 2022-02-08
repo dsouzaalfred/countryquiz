@@ -45,7 +45,7 @@ const CountryToFlag: NextPage = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <PageLayout>
-      <PageTitle title="What's the flag of this country?" />
+      <PageTitle title="Guess the flag" />
       <QuestionCard
         answerCode={answerCode}
         options={options}

@@ -45,7 +45,7 @@ const CountryToCapital: NextPage = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <PageLayout>
-      <PageTitle title="What is the capital of?" />
+      <PageTitle title="Guess the capital" />
       <QuestionCard
         answerCode={answerCode}
         options={options}

@@ -45,7 +45,7 @@ const FlatToCountry: NextPage = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <PageLayout>
-      <PageTitle title="Which country's flag is this?" />
+      <PageTitle title="Guess the country" />
       <QuestionCard
         answerCode={answerCode}
         options={options}
