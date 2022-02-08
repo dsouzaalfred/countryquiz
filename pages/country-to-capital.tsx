@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      answerObject: data[randomCountry],
+      answerCode: data[randomCountry].code,
       options: options,
       questionType: "capitalToCountry",
       question: data[randomCountry].name,
@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 const CountryToCapital: NextPage = ({
-  answerObject,
+  answerCode,
   options,
   questionType,
   question,
@@ -47,7 +47,7 @@ const CountryToCapital: NextPage = ({
     <PageLayout>
       <PageTitle title="What is the capital of?" />
       <QuestionCard
-        answerObject={answerObject}
+        answerCode={answerCode}
         options={options}
         questionType={questionType}
         question={question}

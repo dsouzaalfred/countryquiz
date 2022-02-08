@@ -10,7 +10,7 @@ import { Message } from "@/components/Message";
 import { QuestionCardProps } from "@/types/types";
 
 export const QuestionCard = ({
-  answerObject,
+  answerCode,
   options,
   questionType,
   question,
@@ -30,7 +30,7 @@ export const QuestionCard = ({
       return;
     }
     setSelectedAnswer(answer);
-    if (answer === answerObject.code) {
+    if (answer === answerCode) {
       setIsAnswerCorrect(true);
     } else {
       setIsAnswerCorrect(false);

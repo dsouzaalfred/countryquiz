@@ -26,7 +26,7 @@ export interface Options {
 }
 
 export interface QuestionCardProps {
-  answerObject: Country;
+  answerCode: string;
   questionType:
     | "flagToCountry"
     | "capitalToCountry"
