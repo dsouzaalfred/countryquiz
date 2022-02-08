@@ -8,8 +8,10 @@ import { MENU_ITEMS } from "@/data/menu";
 export const TopNav = () => {
   return (
     <NavBar>
-      <Logo />
-      <ul className="flex flex-row self-end h-12">
+      <div className="flex h-12 flex-row">
+        <Logo />
+      </div>
+      <ul className="flex flex-row h-12">
         {MENU_ITEMS.map((menu) => (
           <NavItem link={menu.link} title={menu.title} key={menu.title} />
         ))}
