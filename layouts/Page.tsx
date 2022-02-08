@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import { Container } from "@/components/Container";
 import { TopNav } from "@/components/TopNav";
-import { BottomNav } from "@/components/BottomNav";
+// import { BottomNav } from "@/components/BottomNav";
 
 interface PageLayoutProps {
   children: ReactNode;
