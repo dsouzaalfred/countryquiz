@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 
 interface OptionsProps {
   label: string;
@@ -27,9 +28,13 @@ export const Options = ({
 }: OptionsProps) => {
   return (
     <button
-      className={`text-gray-700 font-medium tracking-wide text-lg border-solid border-2 p-3 w-full rounded-md cursor-pointer mt-2 hover:bg-gray-100 ${
-        selectedAnswer === value && !isAnswerCorrect ? "bg-red-200" : ""
-      } ${selectedAnswer === value && isAnswerCorrect ? "bg-green-400" : ""}`}
+      className={clsx(
+        "text-gray-700 font-medium tracking-wide text-lg border-solid border-2 p-3 w-full rounded-md cursor-pointer mt-2",
+        {
+          "bg-red-200": selectedAnswer === value && !isAnswerCorrect,
+          "bg-green-400": selectedAnswer === value && isAnswerCorrect,
+        }
+      )}
       onClick={(e) => {
         e.preventDefault();
         if (isAnswerCorrect) return;
