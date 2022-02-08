@@ -5,7 +5,11 @@ import { PageLayout } from "@/layouts/Page";
 import { QuestionCard } from "@/components/QuestionCard";
 import { PageTitle } from "@/components/PageTitle";
 
-import { getRandomIndex, constructOptions, shuffleArray } from "@/utils/index";
+import {
+  getRandomIndex,
+  constructFlagOptions,
+  shuffleArray,
+} from "@/utils/index";
 
 import data from "@/data/countries.json";
 
@@ -19,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     getRandomIndex(data.length),
   ];
 
-  const options = constructOptions(possibleAnswers, data);
+  const options = constructFlagOptions(possibleAnswers, data);
 
   shuffleArray(options);
 

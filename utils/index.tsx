@@ -3,7 +3,7 @@ import { Options, Country } from "@/types/types";
 export const getRandomIndex = (length: number) =>
   Math.floor(Math.random() * length);
 
-export const constructOptions = (
+export const constructFlagOptions = (
   options: number[],
   data: Country[]
 ): Options[] => {
