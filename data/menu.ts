@@ -1,10 +1,10 @@
 export const MENU_ITEMS = [
   {
-    title: "Flags",
-    link: "/flags",
+    title: "Flag",
+    link: "/flag",
   },
   {
-    title: "Capitals",
-    link: "/capitals",
+    title: "Capital",
+    link: "/capital",
   },
 ];
