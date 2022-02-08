@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
-const Home: NextPage = ({
+const FlatToCountry: NextPage = ({
   answerCode,
   options,
   questionType,
@@ -56,4 +56,4 @@ const Home: NextPage = ({
   );
 };
 
-export default Home;
+export default FlatToCountry;
