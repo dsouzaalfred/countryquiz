@@ -1,16 +1,47 @@
+import Image from "next/image";
+
 interface OptionsProps {
   label: string;
   value: string;
-  className?: string;
+  onSelect: (value: string) => void;
+  selectedAnswer: string;
+  isAnswerCorrect: boolean;
+  questionType:
+    | "flagToCountry"
+    | "capitalToCountry"
+    | "currencyToCountry"
+    | "languageToCountry"
+    | "countryToFlag"
+    | "countryToCapital"
+    | "countryToCurrency"
+    | "countryToLanguage";
 }
 
-export const Options = ({ label, value, className }: OptionsProps) => {
+export const Options = ({
+  label,
+  value,
+  onSelect,
+  selectedAnswer,
+  isAnswerCorrect,
+  questionType,
+}: OptionsProps) => {
   return (
-    <label className={className}>
-      <input type="radio" className="hidden" name="answer" value={value} />
-      <div className="text-gray-700 font-medium tracking-wide text-lg border-solid border-2 p-3 w-full rounded-md cursor-pointer hover:bg-gray-100 label-checked:bg-blue-100">
-        {label}
-      </div>
-    </label>
+    <button
+      className={`text-gray-700 font-medium tracking-wide text-lg border-solid border-2 p-3 w-full rounded-md cursor-pointer mt-2 hover:bg-gray-100 ${
+        selectedAnswer === value && !isAnswerCorrect ? "bg-red-200" : ""
+      } ${selectedAnswer === value && isAnswerCorrect ? "bg-green-400" : ""}`}
+      onClick={(e) => {
+        e.preventDefault();
+        if (isAnswerCorrect) return;
+        onSelect(value);
+      }}
+    >
+      <>{questionType !== "countryToFlag" && label}</>
+      <>
+        {questionType === "countryToFlag" && (
+          <Image src={`/${value}.jpg`} alt="Flag" height={63} width={120} />
+        )}
+      </>
+    </button>
   );
 };
