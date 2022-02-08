@@ -25,7 +25,9 @@
         "components/*"
       ],
       "@/data/*": ["data/*"],
-      "@/layouts/*": ["layouts/*"]
+      "@/layouts/*": ["layouts/*"],
+      "@/types/*": ["types/*"],
+      "@/utils/*": ["utils/*"]
     },
     "incremental": true
   },
