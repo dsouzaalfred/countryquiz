@@ -3,9 +3,5 @@ interface PageTitleProps {
 }
 
 export const PageTitle = ({ title }: PageTitleProps) => {
-  return (
-    <div className="py-4 px-4 max-w-md mx-auto space-y-2 flex items-center justify-center sm:space-y-0">
-      <p className="font-bold text-sky-600">{title}</p>
-    </div>
-  );
+  return <h1 className="text-3xl mb-4 text-center">{title}</h1>;
 };
