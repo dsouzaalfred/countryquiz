@@ -8,7 +8,7 @@ const Capital: NextPage = () => {
   return (
     <PageLayout>
       <PageTitle title="Capital quiz" />
-      <div className="flex w-full flex-row justify-center">
+      <div className="flex w-full flex-col md:flex-row justify-center">
         <PageLink link="/capital-to-country" title="Guess the country" />
         <PageLink link="/country-to-capital" title="Guess the capital" />
       </div>

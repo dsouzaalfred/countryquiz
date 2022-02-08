@@ -8,7 +8,7 @@ const Flag: NextPage = () => {
   return (
     <PageLayout>
       <PageTitle title="Flag quiz" />
-      <div className="flex w-full flex-row justify-center">
+      <div className="flex w-full flex-col md:flex-row justify-center">
         <PageLink link="/flag-to-country" title="Guess the country" />
         <PageLink link="/country-to-flag" title="Guess the flag" />
       </div>
