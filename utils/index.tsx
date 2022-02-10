@@ -31,3 +31,14 @@ export const constructCapitalOptions = (
   });
   return arr;
 };
+
+export const constructLanguageOptions = (
+  options: number[],
+  data: Country[]
+): Options[] => {
+  const arr = options.map((option) => {
+    const country = data[option];
+    return { label: country.language.name, value: country.code };
+  });
+  return arr;
+};
