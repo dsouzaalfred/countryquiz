@@ -29,10 +29,10 @@ export const Options = ({
   return (
     <button
       className={clsx(
-        "text-gray-700 font-medium tracking-wide text-lg border-solid border-2 p-3 w-full rounded-md cursor-pointer mt-2",
+        "text-black font-medium tracking-wide text-lg border-solid border-2 border-secondary p-3 w-full rounded-md cursor-pointer mt-2",
         {
-          "bg-red-200": selectedAnswer === value && !isAnswerCorrect,
-          "bg-green-400": selectedAnswer === value && isAnswerCorrect,
+          "bg-wrong": selectedAnswer === value && !isAnswerCorrect,
+          "bg-right": selectedAnswer === value && isAnswerCorrect,
         }
       )}
       onClick={(e) => {

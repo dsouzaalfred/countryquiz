@@ -9,9 +9,9 @@ interface PageLayoutProps {
 
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <div className="bg-white h-screen">
+    <div className="relative flex bg-grey-100 min-h-screen">
       <TopNav />
-      <Container className="pt-8 md:mt-8 md:p-0">{children}</Container>
+      <Container className="pt-8 md:p-0 min-h-screen">{children}</Container>
     </div>
   );
 };

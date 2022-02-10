@@ -10,12 +10,12 @@ export const Message = ({
 }: MessageProps) => {
   return (
     <>
-      {isError && <p className="text-red-600">Please select an answer</p>}
+      {isError && <p className="text-wrong">Please select an answer</p>}
       {isShowAnswer && isAnswerCorrect && (
-        <p className="text-green-600">Correct!</p>
+        <p className="text-right">Correct!</p>
       )}
       {isShowAnswer && !isAnswerCorrect && (
-        <p className="text-red-700">Wrong answer! Try Again.</p>
+        <p className="text-wrong">Wrong answer! Try Again.</p>
       )}
     </>
   );

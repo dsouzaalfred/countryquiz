@@ -6,8 +6,6 @@ interface Props {
 
 export const NavBar = ({ children }: Props) => {
   return (
-    <nav className="flex flex-row items-center justify-between px-8 h-16 bg-white">
-      {children}
-    </nav>
+    <nav className="flex flex-col w-64 bg-light min-h-screen">{children}</nav>
   );
 };

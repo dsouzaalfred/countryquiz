@@ -1,22 +1,22 @@
 import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface NavItemProp {
-  isActive?: boolean;
   title: string;
   link: string;
 }
 
-export const NavItem = ({ isActive = false, title, link }: NavItemProp) => {
+export const NavItem = ({ title, link }: NavItemProp) => {
+  const { asPath } = useRouter();
   return (
     <li>
       <Link href={link} passHref>
         <a
           className={clsx(
-            "w-24 text-gray-400 hover:text-gray-700 cursor-pointer font-medium tracking-wide text-sm flex items-center justify-center h-full",
+            "w-24 text-black hover:text-white cursor-pointer font-medium tracking-wide flex items-center text-lg h-12",
             {
-              "text-gray-700 border-b-4 border-gray-700 bg-gradient-to-b from-white to-gray-100":
-                isActive,
+              "text-secondary": asPath === link,
             }
           )}
         >

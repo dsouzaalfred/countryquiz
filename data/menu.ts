@@ -7,4 +7,12 @@ export const MENU_ITEMS = [
     title: "Capital",
     link: "/capital",
   },
+  {
+    title: "Language",
+    link: "/language",
+  },
+  {
+    title: "Currency",
+    link: "/currency",
+  },
 ];

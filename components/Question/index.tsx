@@ -18,7 +18,7 @@ export const Question = ({ questionType, question }: QuestionProps) => {
     <>
       {questionType !== "flagToCountry" && (
         <div className="w-full flex items-center justify-center">
-          <span className="font-bold text-3xl text-teal-800">{question}</span>
+          <span className="font-bold text-3xl text-black">{question}</span>
         </div>
       )}
       {questionType === "flagToCountry" && (

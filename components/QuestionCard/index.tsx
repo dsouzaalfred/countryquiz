@@ -64,7 +64,7 @@ export const QuestionCard = ({
           <div className="flex items-center justify-end px-8">
             {isAnswerCorrect && (
               <button
-                className="bg-blue-500 text-white font-bold py-2 px-4 rounded mx-2 w-20 hover:bg-blue-800"
+                className="bg-primary text-white font-bold py-2 px-4 rounded mx-2 w-20 hover:bg-secondary"
                 onClick={handleNextClick}
               >
                 Next
