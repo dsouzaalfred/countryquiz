@@ -10,7 +10,6 @@ module.exports = {
       right: "#4ADE80",
       white: "#FFFFFF",
       black: "#000000",
-      card: "#fff6f3",
     },
   },
   content: [

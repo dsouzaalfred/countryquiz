@@ -1,16 +1,17 @@
 import { ReactNode } from "react";
 
 import { Container } from "@/components/Container";
-import { TopNav } from "@/components/TopNav";
-
+import { DesktopNav } from "@/components/Nav/DesktopNav";
+import { MobileMenu } from "@/components/Nav/MobileMenu";
 interface PageLayoutProps {
   children: ReactNode;
 }
 
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <div className="relative flex bg-grey-100 min-h-screen">
-      <TopNav />
+    <div className="flex flex-col md:flex-row bg-grey-100 min-h-screen">
+      <DesktopNav />
+      <MobileMenu />
       <Container className="pt-8 md:p-0 min-h-screen">{children}</Container>
     </div>
   );

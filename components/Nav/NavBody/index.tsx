@@ -1,13 +1,11 @@
 import { Logo } from "@/components/Logo";
-
-import { NavBar } from "./NavBar";
-import { NavItem } from "./NavItem";
+import { NavItem } from "@/components/Nav/NavItem";
 
 import { MENU_ITEMS } from "@/data/menu";
 
-export const TopNav = () => {
+export const NavBody = () => {
   return (
-    <NavBar>
+    <>
       <div className="flex flex-row bg-light border-b-2 border-white">
         <Logo />
       </div>
@@ -16,6 +14,6 @@ export const TopNav = () => {
           <NavItem link={menu.link} title={menu.title} key={menu.title} />
         ))}
       </ul>
-    </NavBar>
+    </>
   );
 };
