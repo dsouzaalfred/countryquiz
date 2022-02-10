@@ -42,3 +42,14 @@ export const constructLanguageOptions = (
   });
   return arr;
 };
+
+export const constructCurrencyOptions = (
+  options: number[],
+  data: Country[]
+): Options[] => {
+  const arr = options.map((option) => {
+    const country = data[option];
+    return { label: country.currency.name, value: country.code };
+  });
+  return arr;
+};
