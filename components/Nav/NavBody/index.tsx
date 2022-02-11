@@ -6,7 +6,7 @@ import { MENU_ITEMS } from "@/data/menu";
 export const NavBody = () => {
   return (
     <>
-      <div className="flex flex-row bg-light border-b-2 border-white">
+      <div className="hidden md:flex flex-row bg-light border-b-2 border-white">
         <Logo />
       </div>
       <ul className="flex flex-col px-4 pb-4">
