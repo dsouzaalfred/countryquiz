@@ -29,7 +29,7 @@ export const Options = ({
   return (
     <button
       className={clsx(
-        "text-black font-medium tracking-wide text-lg border-solid border-2 border-secondary p-3 w-full rounded-md cursor-pointer mt-2",
+        "text-black font-medium tracking-wide text-lg border-solid border-2 border-secondary p-2 md:p-4 w-full rounded-md cursor-pointer mt-2",
         {
           "bg-wrong": selectedAnswer === value && !isAnswerCorrect,
           "bg-right": selectedAnswer === value && isAnswerCorrect,
