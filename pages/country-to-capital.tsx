@@ -6,33 +6,29 @@ import { QuestionCard } from "@/components/QuestionCard";
 import { PageTitle } from "@/components/PageTitle";
 
 import {
-  getRandomIndex,
   constructCapitalOptions,
   shuffleArray,
+  getFourOptions,
+  getRandomIndex,
 } from "@/utils/index";
 
 import data from "@/data/countries.json";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const randomCountry = getRandomIndex(data.length);
+  const optionsArray = getFourOptions(data.length);
+  const questionIndex = getRandomIndex(4);
+  const question = data[optionsArray[questionIndex]];
 
-  const possibleAnswers: number[] = [
-    randomCountry,
-    getRandomIndex(data.length),
-    getRandomIndex(data.length),
-    getRandomIndex(data.length),
-  ];
-
-  const options = constructCapitalOptions(possibleAnswers, data);
+  const options = constructCapitalOptions(optionsArray, data);
 
   shuffleArray(options);
 
   return {
     props: {
-      answerCode: data[randomCountry].code,
+      answerCode: question.code,
       options: options,
       questionType: "capitalToCountry",
-      question: data[randomCountry].name,
+      question: question.name,
     },
   };
 };

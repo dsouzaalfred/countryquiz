@@ -9,30 +9,26 @@ import {
   getRandomIndex,
   constructFlagOptions,
   shuffleArray,
+  getFourOptions,
 } from "@/utils/index";
 
 import data from "@/data/countries.json";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const randomCountry = getRandomIndex(data.length);
+  const optionsArray = getFourOptions(data.length);
+  const questionIndex = getRandomIndex(4);
+  const question = data[optionsArray[questionIndex]];
 
-  const possibleAnswers: number[] = [
-    randomCountry,
-    getRandomIndex(data.length),
-    getRandomIndex(data.length),
-    getRandomIndex(data.length),
-  ];
-
-  const options = constructFlagOptions(possibleAnswers, data);
+  const options = constructFlagOptions(optionsArray, data);
 
   shuffleArray(options);
 
   return {
     props: {
-      answerCode: data[randomCountry].code,
+      answerCode: question.code,
       options: options,
       questionType: "capitalToCountry",
-      question: data[randomCountry].currency.name,
+      question: question.currency.name,
     },
   };
 };
