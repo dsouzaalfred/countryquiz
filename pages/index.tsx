@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <div className="flex w-full flex-col md:flex-row justify-center">
         <PageLink link="/flag" title="Flag quiz" />
         <PageLink link="/capital" title="Capital quiz" />
-        <PageLink link="/language" title="Language quiz" />
+        {/* <PageLink link="/language" title="Language quiz" /> */}
         <PageLink link="/currency" title="Currency quiz" />
       </div>
     </PageLayout>
